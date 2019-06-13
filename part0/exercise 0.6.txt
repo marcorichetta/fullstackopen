@@ -1,0 +1,41 @@
+note over browser:
+This diagram starts after the browser
+loaded and rendered all the content from
+the /spa page
+end note
+
+note over browser:
+browser executes the event handler
+that renders notes to display
+end note
+
+note over browser:
+User writes some text on the note 
+input and clicks on the submit button
+end note
+
+note over browser:
+Browser sends the user input to the server.
+It sends it in JSON format with the note 
+content and the date of creation .
+end note
+
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+
+note over server:
+Server responds with a HTTP status code 201
+indicating that the server successfully created
+a new note
+end note
+
+note over server:
+The server also sends a JSON message and
+the note content in the response payload
+end note
+
+server-->browser: HTTP 201 Created - {"message": 'note created'}
+
+note over browser:
+Browser executes redrawNotes() in spa.js
+to add the new note by modifying the DOM
+end note
