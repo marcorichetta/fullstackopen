@@ -142,3 +142,34 @@ const setValor = () => {
 }
 // Nótese la falta de ()
 <button onClick={setValor}>button</button>
+
+11. Promises (Using axios)
+
+axios
+.get('http://localhost:3001/notes') // Make a GET request
+.then(response => {                 // Chain an event handler
+    const notes2 = response.data    // Save the response data in a variable
+    console.log(notes2)
+})
+
+12. useEffect Hook
+
+const hook = () => {
+    console.log('effect')
+    axios
+        .get('http://localhost:3001/notes')
+        .then(response => {
+            console.log('promise success')
+            setNotes(response.data)
+            })
+}
+
+/* 
+ * useEffect() toma 2 argumentos
+ * 1. La función (el effect)
+ * 2. Indica cada cuanto se ejecuta el effect.
+ *  En este caso es un array vacío, lo que indica
+ *  que el efecto se ejecutará después de que 
+ *  el componente se haya renderizado.
+ */
+useEffect(hook, [])
