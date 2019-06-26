@@ -69,7 +69,7 @@ const Hello = (props) => {
 }
 
 // 2 in 1 step
-const Hello = ({ name, age }) =>
+const Hello = ({ name, age })
 
 8. Logging
 
@@ -144,6 +144,7 @@ const setValor = () => {
 <button onClick={setValor}>button</button>
 
 11. Promises (Using axios)
+// https://javascript.info/promise-chaining#summary
 
 axios
 .get('http://localhost:3001/notes') // Make a GET request
