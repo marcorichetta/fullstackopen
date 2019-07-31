@@ -88,9 +88,8 @@ const App = () => {
 
     event.preventDefault();
     const nameObject = {
-      name: newName,
-      number: newNumber,
-      id: persons.length + 1,
+        name: newName,
+        number: newNumber,
     }
 
     // Check for duplicates
@@ -152,6 +151,14 @@ const App = () => {
         setPersons(persons.concat(returnedContact))
         setNewName('')
         setNewNumber('')
+      })
+      .catch(error => {
+        console.log(error.response.data)
+        setNotificationMessage(`${error.response.data.error}`)
+
+         setTimeout(() => {
+          setNotificationMessage(null)
+        }, 5000)
       })
     
       setNotificationMessage(`${newName} was added to the phonebook`)
