@@ -1,26 +1,33 @@
+# Map
+
+Aplica una función a cada elemento de un *array*, devolviendo un nuevo *array* con los valores transformados.
+
+```js
 let animals = [
     { name: 'bobi1', species: 'perro'},
     { name: 'bobi2', species: 'perro'},
     { name: 'bobi3', species: 'gato'},
-    { name: 'bobi4', species: 'alien'},
-    { name: 'bobi5', species: 'avestruz'},
 ]
+```
 
-/* For loop comparison
-
+Creamos un nuevo array con el nombre de los animales
+---
+**Modo Imperativo**
+```js
 let nombres = []
+
 for (let i = 0; i < animals.length; i++) {
     nombres.push(animals[i].name);
-} 
-*/
+}
+nombres // [ 'bobi1', 'bobi2', 'bobi3' ]
+```
 
-// map example
+**Modo funcional**
+```js
 let nombres = animals.map(function(animal) { return animal.name})
 
-// Arrow function example
+// Con arrow function
 let nombres2 = animals.map(animal => animal.name)
 
-
-console.log("Nombres: \n", nombres)
-
-console.log('Nombres2: \n', nombres2)
+nombres // [ 'bobi1', 'bobi2', 'bobi3' ]
+```
